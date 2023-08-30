@@ -1,0 +1,12 @@
+<div>
+  <h2>NBA Player Stats</h2>
+  <input type="text" [(ngModel)]="playerName" placeholder="Enter player name">
+  <button (click)="searchPlayerStats()">Search</button>
+</div>
+
+<div *ngIf="playerData.length > 0">
+  <h3>Player Stats for {{ playerName }}</h3>
+  <ul>
+    <li *ngFor="let season of playerData">{{ season.year }} - {{ season.average }}</li>
+  </ul>
+</div>
